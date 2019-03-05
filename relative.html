@@ -1,0 +1,53 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>relative</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style type="text/css">
+      #header {
+        width: 800px;
+        height: 150px;
+        background: saddlebrown;
+        position: relative;
+        left: 50;
+        top: 50;
+        margin: auto;
+      }
+      #nav {
+        width: 600px;
+        height: 50px;
+        background: yellow;
+        position: absolute;
+        left: 150;
+        top: 70;
+      }
+      #content {
+        width: 800px;
+        height: 150px;
+        background: seagreen;
+        position: relative;
+        left: 100;
+        top: 100;
+      }
+      #footer {
+        width: 800px;
+        height: 150px;
+        background: skyblue;
+        position: relative;
+        left: 150;
+        top: 150;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <div id="nav"></div>
+    </div>
+    <div id="content"></div>
+    <div id="footer"></div>
+  </body>
+</html>
