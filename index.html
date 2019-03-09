@@ -3,159 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <title>한진</title>
-    <style type="text/css">
-      body,
-      h1,
-      h2,
-      h3,
-      p,
-      div,
-      ul,
-      li,
-      dl,
-      dt,
-      dd {
-        margin: 0;
-        padding: 0;
-      }
-      ul,
-      li {
-        list-style: none;
-      }
-      a {
-        text-decoration: none;
-        color: #222;
-      }
-      address {
-        font-style: normal;
-      }
-      body {
-        font-family: "나눔고딕", "돋움", sans-serif, Arial;
-        font-size: 13px;
-        line-height: 1.5;
-        letter-spacing: -1px;
-        direction: ltr;
-      }
-
-      /* skip menu */
-      .skip_menu {
-        position: relative;
-      }
-      .skip_menu a {
-        position: absolute;
-        top: -40px;
-        left: 0;
-        widows: 138;
-        border: 1px solid #4ec53d;
-        background: slategray;
-        text-align: center;
-      }
-      .skip_menu a:active,
-      .skip_menu a:focus {
-        top: 0;
-        z-index: 1000;
-        text-decoration: none;
-      }
-      .skip_menu span {
-        display: inline-block;
-        padding: 2px 6px 0 0;
-        color: #fff;
-        letter-spacing: -1px;
-        font-size: 13px;
-        line-height: 26px;
-      }
-      /* header */
-      #header {
-        height: 160px;
-        border: 1px solid red;
-      }
-      .header_top {
-        width: 1000px;
-        height: 90px;
-        margin: auto;
-        border: 1px solid#00f;
-      }
-      #header h1 {
-        /* ir image replacement : 텍스트 요소를 이미지로 표현 */
-        /* 1. 박스 크기 지정 */
-        width: 200px;
-        height: 55px;
-        /* 2. 배경 이미지 적용*/
-        background: url(images/logo_header.jpg) no-repeat;
-        /* background-position-y: 10px; */
-        margin: auto;
-        /* border: 1px solid#f00; */
-        /* 3. 글자 감추기 */
-        /* text-indent: 100%;
-        white-space: nowrap;
-        overflow: hidden; */
-        text-indent: -9999px;
-      }
-      #header h1 a {
-        display: block;
-        height: 100%;
-      }
-
-      .top_menu h2 {
-        display: inline-block;
-        text-indent: -9999px;
-        /* overflow: hidden;
-        width: 1px;
-        height: 1px; */
-      }
-      .top_menu ul {
-        float: right;
-      }
-      .gnb {
-        width: 1000px;
-        height: 70px;
-        margin: auto;
-      }
-      .gnb h2 {
-        overflow: hidden;
-        width: 1px;
-        height: 1px;
-      }
-      .gnb li {
-        margin: 20px 38px;
-        width: 89px;
-        height: 37px;
-        float: left;
-        text-indent: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-      }
-      .gnb li a {
-        display: block;
-        height: 100%;
-      }
-      .intro {
-        background: url(images/menu_introduction.jpg) no-repeat;
-      }
-      .pr {
-        background: url(images/menu_publicRelationsCenter.jpg) no-repeat;
-      }
-      .business {
-        background: url(images/menu_business.jpg) no-repeat;
-      }
-      .invest {
-        background: url(images/menu_investmentInformation.jpg) no-repeat;
-      }
-      .hjpeople {
-        background: url(images/menu_hanjinPeople.jpg) no-repeat center;
-      }
-      .cs {
-        background: url(images/menu_customCenter.jpg) no-repeat;
-      }
-
-      /* content */
-      #content {
-      }
-      /* footer */
-      #footer {
-        display: none;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="index.css" />
   </head>
   <body>
     <div class="skip_menu">
@@ -192,11 +40,12 @@
       <div class="main_image">
         <h2>주요소식</h2>
         <ul>
-          <li><a href="3">내용 1</a></li>
-          <li><a href="3">내용 2</a></li>
-          <li><a href="3">내용 3</a></li>
+          <li class="main_image1"><a href="3">내용 1</a></li>
+          <!-- <li><a href="3">내용 2</a></li>
+          <li><a href="3">내용 3</a></li> -->
         </ul>
       </div>
+
       <div class="logistics_provider">
         <h2>한진물류 소개</h2>
         <p>
@@ -204,26 +53,31 @@
           전세계에 행복과 미래를 전달합니다.
         </p>
 
-        <dl>
+        <dl class="stock">
           <dt>주가정보</dt>
-          <dd>현재 25,250<br />전일대비 200 (0.79%) 하락</dd>
+          <dd>
+            <span class="stock_hide">현재</span> 25,250
+            <sapn class="stock_hide">전일대비</sapn>
+            <span class="down_arrow"></span>200 (0.79%)
+            <span class="stock_hide">하락</span>
+          </dd>
         </dl>
 
-        <dl>
+        <dl class="lp_logistics">
           <dt>한진택배</dt>
           <dd>
             차별화된 고품격 택배서비스를 제공합니다.
             <a href="#">자세히 보기</a>
           </dd>
         </dl>
-        <dl>
+        <dl class="lp_rentercar">
           <dt>한진렌터카</dt>
           <dd>
             제주 렌터카, 장기 렌탈, 최상의 한진렌터카 서비스를 만나보세요.
             <a href="#">자세히 보기</a>
           </dd>
         </dl>
-        <dl>
+        <dl class="lp_ehanex">
           <dt>이하넥스</dt>
           <dd>
             해외직구 상품구매에서 배송대행 서비스까지 편리하게 이용하세요.
