@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <p id="changeText">클릭한 버튼에 따라 다른 스타일이 적용됩니다.</p>
+    <p>
+      <button type="button" onclick="chageColor(type)">
+        빨강
+      </button>
+    </p>
+    <p>
+      <button type="button" id="blue" onclick="chageColor(id)">
+        파랑
+      </button>
+    </p>
+    <p>
+      <button type="button" id="green" onclick="chageColor(id)">
+        초록
+      </button>
+    </p>
+  </body>
+  <script>
+    function chageColor(id) {
+      console.log(id);
+      var colors = document.getElementById(id).id;
+      document.getElementById("changeText").style.color = colors;
+    }
+  </script>
+</html>

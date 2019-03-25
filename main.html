@@ -1,0 +1,50 @@
+<script>
+  const add = (a, b) => a + b;
+  const square = a => a * a;
+  const isOddNumber = a => a % 2;
+  const prop = key => obj => obj[key];
+  const propEq = (key, val) => obj => obj[key] === val;
+
+  const iter = {
+    *[Symbol.iterator]() {
+      yield 1;
+      yield 2;
+      yield 3;
+      yield 4;
+      yield 5;
+    }
+  };
+
+  const reduce = (f, acc, iter) => {
+    if (!iter) {
+      iter = acc[Symbol.iterator]();
+      acc = iter.next().value;
+    }
+    for (const item of iter) {
+      acc = f(acc, item);
+    }
+    return acc;
+  };
+  const map = (f, iter) => reduce((acc, i) => (acc.push(f(i)), acc), [], iter);
+
+  const filter = (f, iter) =>
+    reduce((acc, i) => (f(i) && acc.push(i), acc), [], iter);
+
+  const pipe = function(...fs) {
+    return function(...acc) {
+      let a = fs[0](...acc);
+      for (let i = 1; i < fs.length; i++) {
+        a = fs[i](a);
+      }
+      return a;
+    };
+  };
+  const addAll = (...args) => reduce(add, args);
+  const func = pipe(
+    addAll,
+    square,
+    Math.sqrt,
+    a => a + 1
+  );
+  func(iter);
+</script>

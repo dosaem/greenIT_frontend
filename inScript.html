@@ -1,0 +1,124 @@
+<script>
+  const log = console.log;
+</script>
+<script>
+  //   const iter = {
+  //     *[Symbol.iterator]() {
+  //       yield 1;
+  //       yield 2;
+  //       yield 3;
+  //       yield 4;
+  //       yield 5;
+  //     }
+  //   };
+
+  //   const products = [
+  //     { id: 1, name: "아이폰8", category: "phone", price: 800 },
+  //     { id: 2, name: "아이폰XS", category: "phone", price: 1300 },
+  //     { id: 3, name: "맥북프로15", category: "computer", price: 3000 },
+  //     { id: 4, name: "아이맥5K", category: "computer", price: 2500 }
+  //   ];
+</script>
+
+<script>
+  //   const add = (a, b) => a + b;
+
+  //   for (let i of iter[Symbol.iterator]()) {
+  //     console.log(i);
+  //   }
+
+  const reduce = function(f, acc, iter) {
+    if (!iter) {
+      iter = acc[Symbol.iterator]();
+      acc = iter[Symbol.iterator]().next().value;
+    }
+    for (let i of iter[Symbol.iterator]()) {
+      acc = f(acc, i);
+    }
+    return acc;
+  };
+
+  //   log(reduce(add, 10, iter));
+  //   log(reduce(add, iter));
+</script>
+
+<script>
+  const square = a => a * a;
+  //   const map = function(f, iter) {
+  //     const newIter = [];
+  //     for (let i of iter[Symbol.iterator]()) {
+  //       newIter.push(f(i));
+  //     }
+  //     return newIter;
+  //   };
+  //   log(map(square, iter));
+  //   const res = map(square, iter);
+
+  //   const map = function(f, iter) {
+  //     const newIter = [];
+  //     newIter.push(reduce(f, iter));
+  //     return newIter;
+  //   };
+
+  //   const _push = (val, arr = []) => (arr.push(val), arr);
+  //   const map = (f, coll) => reduce((acc, curr) => _push(f(curr), acc), [], coll);
+
+  //   const map2 = function(f, iter) {
+  //       return reduce() {
+
+  //         return
+  //       }
+  //   }
+
+  //   log(map(square, iter));
+</script>
+
+<script>
+  //   const isOddNumber = a => a % 2;
+
+  //   const filter = function(f, iter) {
+  //     const newIter = [];
+  //     for (let i of iter[Symbol.iterator]()) {
+  //       if (f(i)) newIter.push(i);
+  //     }
+  //     return newIter;
+  //   };
+
+  //   log(filter(isOddNumber, iter));
+
+  //   const pipe = function(f, ...fs) {};
+
+  //   const func = pipe(
+  //     iter => map(square, iter),
+  //     iter => filter(isOddNumber, iter),
+  //     iter => reduce(add, iter)
+  //   );
+</script>
+
+<script>
+  function _pipe() {
+    var funcs = arguments;
+    return function(arg) {
+      return _reduce(
+        funcs,
+        function(arg, func) {
+          return func(arg);
+        },
+        arg
+      );
+    };
+  }
+  // use
+  var f1 = _pipe(
+    function(a) {
+      return a + 1;
+    }, // 1 + 1
+    function(a) {
+      return a * 2;
+    }, // 2 * 2
+    function(a) {
+      return a * a;
+    } // 4 * 4
+  );
+  console.log(f1(1)); // 16
+</script>

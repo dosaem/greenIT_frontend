@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>객체접근</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+    <style>
+      .red {
+        color: red;
+      }
+      .blue {
+        color: blue;
+      }
+      .green {
+        color: green;
+      }
+    </style>
+    <script>
+      //   var rBtn = document.getElementById("red");
+      //   var bBtn = document.getElementById("blue");
+      //   var gBtn = document.getElementById("green");
+      window.onload = function ol() {
+        var cT = document.getElementById("cT");
+
+        red.onclick = function() {
+          cT.className = "red";
+        };
+        blue.onclick = function() {
+          cT.className = "blue";
+        };
+        green.onclick = function() {
+          cT.className = "green";
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <p id="cT">클릭한 버튼에 따라 다른 스타일이 적용됩니다.</p>
+    <p>
+      <button type="button" id="red" value="red">
+        빨강
+      </button>
+    </p>
+    <p>
+      <button type="button" id="blue" value="blue">
+        파랑
+      </button>
+    </p>
+    <p>
+      <button type="button" id="green" value="green">
+        초록
+      </button>
+    </p>
+  </body>
+</html>

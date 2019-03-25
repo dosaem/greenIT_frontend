@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>join</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style>
+      li {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>회원가입</legend>
+        <ul>
+          <li>이름: <input type="text" id="uNmae" name="uName" /></li>
+          <li>
+            아이디: <input type="text" id="uId" name="uId" />
+            <button type="button" id="uIdCheck" name="uIdCheck">
+              아이디 중복확인
+            </button>
+          </li>
+          <li>비밀번호: <input type="password" id="uPw" name="uPw" /></li>
+          <li>
+            비밀번호 확인:
+            <input type="password" id="uPwCheck" name="uPwCheck" />
+          </li>
+          <li>
+            생년월일: <input type="text" id="uYear" name="uYear" /><select>
+              <option value="9">9월</option>
+            </select>
+            <input type="text" id="uDay" name="uDay" />
+          </li>
+
+          <li>
+            성별: <input type="radio" name="uGender" value="male" /> 남
+            <input type="radio" name="uGender" value="female" /> 여
+          </li>
+
+          <li>
+            <button type="button" id="uAdBtn" name="uAdBtn">
+              주소검색
+            </button>
+          </li>
+          <li>
+            주소:
+            <input type="text" id="uAd" name="uAd" />
+          </li>
+          <li>상세주소: <input type="text" id="uAdd" name="uAdd" /></li>
+          <li>
+            연락처:
+            <select name="call">
+              <option value="010">010</option>
+            </select>
+            <input type="text" id="mNumber" name="mNumber" />
+            <input type="text" id="lNumber" name="lNumber" />
+          </li>
+          <li>
+            이메일:
+            <input type="text" id="uEmail" name="uEmail" />
+            @
+            <select>
+              <option value="google.com">google.com</option>
+            </select>
+          </li>
+          <li>
+            <input type="checkbox" name="uJoinRoad1" value="kp" /> 지인
+            <input type="checkbox" name="uJoinRoad2" value="ad" /> 광고
+            <input type="checkbox" name="uJoinRoad3" value="sc" /> 검색
+            <input type="text" id="uJoinRoad4" name="uJoinRoad4" />
+          </li>
+          <li>
+            약관 블라블라
+            <input type="checkbox" name="iAgree" value="iAgree" />동의합니다.
+          </li>
+          <li>가입하기<input type="submit" id="uOk" name="uOk" /></li>
+          <li>돌아가기<input type="reset" id="uBye" name="uBye" /></li>
+        </ul>
+      </fieldset>
+    </form>
+  </body>
+</html>

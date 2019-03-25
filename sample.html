@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style>
+      .main_bn {
+        float: left;
+        width: 300px;
+        height: 330px;
+        margin-right: 0.84%;
+        padding: 44px 35px 0 35px;
+      }
+      .main_store {
+        background: url(../images/main/main_store_bg.jpg) no-repeat right top
+          #233e83;
+      }
+      .main_bn {
+        position: relative;
+      }
+      /* div {
+        display: block;
+      } */
+
+      form,
+      input {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .main_store .store_search {
+        margin-top: 35px;
+      }
+
+      .main_store .store_search input {
+        width: 300px;
+        /* max-width: 320px; */
+        height: 44px;
+        border: solid 3px #ffffff;
+        background: #ffffff;
+        padding-left: 20px;
+        font-size: 14px;
+        /* color: #fff; */
+        box-sizing: border-box;
+      }
+      .store_search form {
+        position: relative;
+      }
+
+      .main_store .store_search a {
+        /* margin-left: -40px; */
+        position: absolute;
+        top: 6px;
+        right: 10px;
+        color: #464646;
+      }
+
+      img {
+        border: 0px;
+        /* vertical-align: top; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main_bn main_store">
+      <h2>매장찾기</h2>
+      <p><span>가까운 이디야 매장을</span> 확인해보세요.</p>
+
+      <div class="store_search">
+        <form
+          name="findstore"
+          method="post"
+          action="./contents/find_store.html"
+        >
+          <input
+            id="storeSearch"
+            name="main_search"
+            title="매장찾기"
+            placeholder="FIND A STORE"
+          /><a href="#"
+            ><img src="images/findstore.png" width="27" height="27" alt="검색"
+          /></a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

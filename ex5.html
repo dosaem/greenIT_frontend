@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>src</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .thumb_img img {
+        width: 150px;
+        height: 105px;
+        margin-right: 5px;
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      function changeImage(a) {
+        // console.log(a);
+        var big_img = document.getElementById("big_img");
+        // console.log(big_img.src);
+
+        // big_img.getAttribute("src");
+
+        // big_img.src = "2.jpg";
+        big_img.setAttribute("src", a);
+      }
+    </script>
+  </head>
+  <body>
+    <p>
+      <img src="1.jpg" id="big_img" />
+    </p>
+    <p class="thumb_img">
+      <!-- <img src="1.jpg" onclick="changeImage('1.jpg')" />
+      <img src="2.jpg" onclick="changeImage('2.jpg')" />
+      <img src="3.jpg" onclick="changeImage('3.jpg')" />
+      <img src="4.jpg" onclick="changeImage('4.jpg')" /> -->
+      <img src="1.jpg" onclick="changeImage(this.src)" />
+      <img src="2.jpg" onclick="changeImage(this.src)" />
+      <img src="3.jpg" onclick="changeImage(this.src)" />
+      <img src="4.jpg" onclick="changeImage(this.src)" />
+    </p>
+  </body>
+</html>
