@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>join</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script>
+      function form_check() {
+        var uname = document.getElementById("uname");
+        var pwd = document.getElementById("pwd");
+        let phone = document.getElementById("phone");
+        if (!uname.value) {
+          alert("이름을 입력해 주세요");
+          uname.focus();
+          return false;
+        }
+        if (!pwd.value) {
+          alert("비밀번호를 입력해 주세요");
+          uname.focus();
+          return false;
+        }
+        let pl = pwd.value.length;
+        if (!(pl >= 6 && pl <= 12)) document.join_form.submit();
+
+        let reg = /^[0-9]=$/g;
+
+        if (!reg.test(phone.value)) {
+          alert("숫자만");
+          phone.focus();
+          return false;
+        }
+      }
+
+      function search_addr() {
+        window.open(
+          "search_zip.html",
+          "zc",
+          "width=500,height=300,left=100,top=100"
+        );
+      }
+
+      function sel_email_addr() {
+        let email_dns = document.getElementById("email_dns");
+        let sel_dns = document.getElementById("sel_dns");
+        let idx = sel_dns.options.selectedIndex;
+        if (idx == 0) {
+          email_dns.value = "";
+          email_dns.focus();
+          email_dns.readOnly = false;
+        } else {
+          email_dns.value = sel_dns[idx].value;
+          email_dns.readOnly = true;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form action="memeber.php" name="join_form" method="POST"></form>
+    <fieldset>
+      <legend>회원가입</legend>
+      <p>
+        <label for="uname">이름</label>
+        <input type="text" name="uname" id="uname" />
+      </p>
+
+      <p>
+        <label for="uid">아이디</label>
+        <input type="text" name="uid" id="uid" />
+        <button type="button">아이디 중복확인</button>
+      </p>
+
+      <p>
+        <label for="uname">이름</label>
+        <input type="text" name="uname" id="uname" />
+      </p>
+
+      <p>
+        <label for="pwd">비밀번호</label>
+        <input type="password" name="pwd" id="pwd" maxlength="12" />
+      </p>
+
+      <p>
+        <label for="repwd">비밀번호확인</label>
+        <input type="password" name="repwd" id="repwd" />
+      </p>
+
+      <p>
+        생년월일
+        <input type="text" name="b_year" id="b_year" />
+        <label for="b_year">년</label>
+        <input type="text" name="b_month" id="b_month" />
+        <label for="b_month">월</label>
+        <input type="text" name="b_date" id="b_dates" />
+        <label for="b_date">일</label>
+      </p>
+
+      <p>
+        <input type="radio" name="gender" id="gender_m" value="m" />
+        <label for="gender_m">남</label>
+        <input type="radio" name="gender" id="gender-w" value="w" />
+        <label for="gender-w">여</label>
+      </p>
+
+      <p>
+        <label for="zipcode">주소검색</label>
+        <input type="text" name="zipcode" id="zipcode" />
+        <button type="button" onclick="search_addr()">주소검색</button>
+        <label for="addr1">기본주소</label>
+        <input type="text" name="addr1" id="addr1" />
+        <label for="addr2">상세주소</label>
+        <input type="text" name="addr2" id="addr2" />
+      </p>
+
+      <p>
+        <label for="phone">연락처</label>
+        <input type="text" name="phone" id="phone" /> "-"없이 번호만 입력
+      </p>
+
+      <p>
+        <label for="uname">이메일</label>
+        <input type="text" name="email_id" id="email_id" />@
+        <input type="text" name="email_dns" id="email_dns" />
+        <select name="sel_dns" id="sel_dns" onchange="sel_email_addr()">
+          <option value="">직접입력</option>
+          <option value="naver.com">naver.com</option>
+          <option value="hanmail.net">hanmail.net</option>
+          <option value="gmail.com">google.com</option>
+        </select>
+      </p>
+
+      <p>
+        가입경로
+        <input type="checkbox" name="tv" id="tv" /> <label for="tv">Tv</label>
+        <input type="checkbox" name="ie" id="ie" />
+        <label for="ie">인터넷</label>
+        <input type="checkbox" name="news" id="news" />
+        <label for="new">신문</label>
+        <input type="checkbox" name="friend" id="friend" />
+        <label for="friend">지인</label>
+      </p>
+
+      <p>
+        <input type="checkbox" name="t_apply" id="t_apply" />
+        <label for="t_apply">약관동의</label>
+      </p>
+
+      <p>
+        <button type="button" onclick="form_check()">가입하기</button>
+        <button type="button" onclick="history.back()">돌아가기</button>
+      </p>
+    </fieldset>
+  </body>
+</html>

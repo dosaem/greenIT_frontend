@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>"역삼동" 검색결과</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      function return_addr(zip, addr) {
+        console.log(zip, addr);
+        opener.document.getElementById("zipcode").value = zip;
+        opener.document.getElementById("addr1").value = addr;
+        window.close();
+      }
+    </script>
+  </head>
+  <body>
+    <p>"역삼동"에 대한 검색 결과입니다.</p>
+    <p>
+      <a
+        href="#"
+        onclick="return_addr('06253','서울 강남구 강남대로 298 푸르덴셜 타워')"
+        >06253 서울 강남구 강남대로 298 푸르덴셜 타워</a
+      >
+    </p>
+    <p>
+      <a
+        href="#"
+        onclick="return_addr('06253','서울 강남구 강남대로 302 동희빌딩')"
+        >06253 서울 강남구 강남대로 302 동희빌딩</a
+      >
+    </p>
+    <p>
+      <a
+        href="#"
+        onclick="return_addr('06253','서울 강남구 강남대로 308 랜드마크타워')"
+        >06253 서울 강남구 강남대로 308 랜드마크타워</a
+      >
+    </p>
+  </body>
+</html>
