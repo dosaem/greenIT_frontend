@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Dom구조를 이용한 선택자</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      li {
+        line-height: 40px;
+        font-size: 24px;
+      }
+
+      .brd {
+        border: 1px solid #f00;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>요소 계층간 구조</h2>
+    <ul class="DOMTree">
+      <li>ul의 하위 계층</li>
+      <li>ul의 하위 계층</li>
+      <li>
+        ul의 하위 계층
+        <ul>
+          <li>여기는 손자 계층</li>
+          <li>여기는 손자 계층</li>
+        </ul>
+      </li>
+      <li>ul의 하위 계층</li>
+      <li>ul의 하위 계층</li>
+      <li>ul의 하위 계층</li>
+    </ul>
+  </body>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      //   $("li").addClass("brd");
+      //   $(".DOMTree > li").addClass("brd");
+      $(".DOMTree > li > ul > li").addClass("brd");
+    });
+  </script>
+</html>

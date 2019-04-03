@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>formfilter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .redBG {
+        background: red;
+      }
+      .whiteFt {
+        color: white;
+      }
+      .border {
+        border: 5px red;
+      }
+      .redFt {
+        color: red;
+      }
+      input {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>* 폼 필터</h2>
+    <p><input type="text" /></p>
+    <p><input type="password" /></p>
+
+    <p><input type="checkbox" checked="checked" />CheckBox #1</p>
+    <p><input type="checkbox" />CheckBox #2</p>
+    <p><input type="checkbox" checked="checked" />CheckBox #3</p>
+
+    <select multiple="multiple">
+      <option>Option #1 </option>
+      <option selected="selected">Option #2 </option>
+      <option>Option #3 </option>
+    </select>
+  </body>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // text, password 에 빨간색 배경, 흰색 글자
+      //   $(":text, :password").addClass("redBG whiteFt");
+      $(":text, :password").css({
+        background: "#00f",
+        color: "#f0f"
+      });
+      // 체크된 필드에 테두리 지정
+      //   $(":checked").addClass("border");
+      $(":checked").css({ outline: "3px solid #00f" });
+      // 선택된 항목에 빨강색 글자
+      $(":selected").addClass("redFt");
+      //   $(":selected").css({ color: "red" });
+    });
+  </script>
+</html>

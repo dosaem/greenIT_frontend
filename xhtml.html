@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>레이아웃</title>
+    <style type="text/css">
+      header {
+        width: 800px;
+        height: 100px;
+        background: #ff8000;
+        position: relative;
+        margin: auto;
+      }
+      nav {
+        width: 600px;
+        height: 50px;
+        background: #ffff00;
+        position: absolute;
+        left: 150px;
+        top: 30px;
+      }
+      #visual{
+        width: 800px;
+        height: 100px;
+        background: #e555e5;
+        margin: auto;
+      }
+      #aside {
+        width: 200px;
+        height: 400px;
+        background: #c6c036;
+        float: left;
+      }
+      #section {
+        width: 600px;
+        height: 400px;
+        background: #e85d2a;
+        float: left;
+      }
+
+      #section div {
+        width: 200px;
+        height: 150px;
+        background: #ff0;
+      }
+
+      /* Type 1
+#article1{margin:30px 0 40px 70px}
+#article2{margin:-190px 0 40px 330px}
+#article3{margin-left:70px}
+#article4{margin:-150px 0 0 330px} */
+
+      /* Type 2
+#section div{float:left}
+#article1{margin:30px 60px 40px 70px}
+#article2{margin:30px 0 40px 0}
+#article3{margin:0 60px 0 70px} */
+
+      /* Type 3
+#section div{position:relative}
+#article1{left:70px;top:30px}
+#article2{left:330px;top:-120px}
+#article3{left:70px;top:-80px}
+#article4{left:330px;top:-230px} */
+
+      /* Type 4 */
+      #section {
+        position: relative;
+      }
+      #section div {
+        position: absolute;
+      }
+      #article1 {
+        left: 70px;
+        top: 30px;
+      }
+      #article2 {
+        left: 330px;
+        top: 30px;
+      }
+      #article3 {
+        left: 70px;
+        top: 220px;
+      }
+      #article4 {
+        left: 330px;
+        top: 220px;
+      }
+
+      #main {
+        width: 800px;
+        overflow: hidden;
+        margin: auto;
+      }
+
+      #footer {
+        width: 800px;
+        height: 100px;
+        background: #4be038;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav></nav>
+    </header>
+    <section id="visual"></section>
+    <main>
+      <aside></aside>
+      <section>
+        <article>1</article>
+        <article>2</article>
+        <article>3</article>
+        <article>4</article>
+      <section>
+    <main>
+    <footer></footer>
+  </body>
+</html>

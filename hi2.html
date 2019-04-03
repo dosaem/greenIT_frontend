@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>형제관계를 이용한 선택자</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      div,
+      span {
+        display: block;
+        width: 150px;
+        height: 150px;
+        margin: 10px;
+        background: #0099ff;
+        float: left;
+        font-size: 16px;
+      }
+      div#small {
+        width: 100px;
+        height: 60px;
+        font-size: 14px;
+        background: #fab;
+      }
+      .brd {
+        border: 5px solid #f00;
+      }
+    </style>
+  </head>
+  <body>
+    <div>DIV</div>
+    <span id="prev">SPAN#PREV</span>
+    <div>#PREV의 형제 DIV</div>
+    <div>
+      #PREV의 형제 DIV
+      <div id="small">후손 DIV#SMALL</div>
+    </div>
+    <span>#PREV의 형제 SPAN</span>
+    <div>#PREV의 형제 DIV</div>
+  </body>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      //   $("li").addClass("brd");
+      //   $(".DOMTree > li").addClass("brd");
+      //   $(".DOMTree > li > ul > li").addClass("brd");
+      // span 요소 바로 다음에 오는 div에만 스타일 적용
+      //   $("span + div").addClass("brd");
+      // #prev의 형제 요소 중 #prev 다음에 오는 div만 스타일 적용
+      $("#prev ~ div").addClass("brd");
+    });
+  </script>
+</html>

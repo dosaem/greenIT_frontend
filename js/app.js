@@ -1,6 +1,5 @@
-$(function() {
-  $("#red").addClass("pink");
-  $(".blue").addClass("greenText");
-  $("td").addClass("pink");
-  $(".pink").addClass("whiteT");
+$(document).ready(function() {
+  $(".slider").bxSlider({
+    auto: true
+  });
 });
