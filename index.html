@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>index</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-sacle=1, minumun-scale=1, user-scale=no"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/css/main.css"
+    />
+    <style></style>
+    <script src="js/main.js"></script>
+    <script>
+      const log = console.log;
+
+      function setLocalStorage() {
+        log(window["localStorage"]);
+        log(!!window["localStorage"]);
+        if (!!window["localStorage"]) {
+          var textBox = document.querySelector("#textBox1");
+          window.localStorage["key1"] = textBox.value;
+        }
+      }
+
+      function getLocalStorage() {
+        if (!!window["localStorage"]) {
+          var textBox = document.querySelector("#textBox2");
+          textBox.value = window.localStorage["key1"];
+        }
+      }
+
+      function setSessionStorage() {
+        if (!!window["sessionStorage"]) {
+          var textBox = document.querySelector("#textBox3");
+          window.sessionStorage["key1"] = textBox.value;
+        }
+      }
+
+      function getSessionStorage() {
+        if (!!window["sessionStorage"]) {
+          var textBox = document.querySelector("#textBox4");
+          textBox.value = window.sessionStorage["key1"];
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="textBox1" />
+    <button onclick="setLocalStorage()">Local Storage 에 데이터 저장</button>
+    <br />
+    <input type="text" id="textBox2" />
+    <button onclick="getLocalStorage()">Local Storage 조회</button>
+    <hr />
+    <input type="text" id="textBox3" />
+    <button onclick="setSessionStorage()">
+      Session Storage 에 데이터 저장
+    </button>
+    <br />
+    <input type="text" id="textBox4" />
+    <button onclick="getSessionStorage()">Session Storage 조회</button>
+  </body>
+</html>

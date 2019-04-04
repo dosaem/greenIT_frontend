@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>file</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style>
+      * {
+        font-size: 24px;
+      }
+    </style>
+    <script>
+      function readFile() {
+        var file = document.getElementById("file").files[0];
+        document.getElementById("fileName").textContent = file.name;
+        document.getElementById("fileSize").textContent =
+          "(" + file.size + "byte)";
+
+        var reader = new FileReader();
+
+        reader.onload = function() {
+          var display = document.getElementById("content");
+          display.textContent = reader.result;
+        };
+
+        reader.onerror = function(evt) {
+          alert(evt.target.error.code);
+        };
+        reader.readAsText(file);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>HTML5 File API 테스트</h1>
+    <input id="file" type="file" />
+    <button onclick="readFile()">읽기</button>
+    <div>
+      <span id="fileName">File Name</span>
+      <span id="fileSize">File Size</span>
+    </div>
+    <textarea
+      id="content"
+      readonly
+      style="width:600px; height:400px"
+    ></textarea>
+  </body>
+</html>
