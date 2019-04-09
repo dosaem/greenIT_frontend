@@ -14,6 +14,12 @@
       yield 5;
     }
   };
+  const products = [
+    { id: 1, name: "아이폰8", category: "phone", price: 800 },
+    { id: 2, name: "아이폰XS", category: "phone", price: 1300 },
+    { id: 3, name: "맥북프로15", category: "computer", price: 3000 },
+    { id: 4, name: "아이맥5K", category: "computer", price: 2500 }
+  ];
 
   const reduce = (f, acc, iter) => {
     if (!iter) {
@@ -25,6 +31,27 @@
     }
     return acc;
   };
+
+  // const groupBy = function(f, iter) {
+  //   // f = obj => obj["catefory"];
+  //   const res = {};
+  //   for (const i of iter) {
+  //     // console.log(i);
+  //     if (res[f(i)]) {
+  //       res[f(i)].push(i);
+  //     } else res[f(i)] = [i];
+  //   }
+  //   // console.log(res);
+  //   return res;
+  // };
+
+  const groupBy = (f, iter) =>
+    reduce(
+      (res, i) => (res[f(i)] ? res[f(i)].push(i) : (res[f(i)] = [i]), res),
+      {},
+      iter
+    );
+  // console.log(groupBy(prop("category"), products));
   const map = (f, iter) => reduce((acc, i) => (acc.push(f(i)), acc), [], iter);
 
   const filter = (f, iter) =>
@@ -39,6 +66,12 @@
       return a;
     };
   };
+
+  // const func = pipe(
+  //   iter => map(square, iter),
+  //   iter => filter(isOddNumber, iter),
+  //   iter => reduce(add, iter)
+  // );
   const addAll = (...args) => reduce(add, args);
   const func = pipe(
     addAll,
@@ -46,5 +79,6 @@
     Math.sqrt,
     a => a + 1
   );
-  func(iter);
+
+  console.log(func(...iter));
 </script>

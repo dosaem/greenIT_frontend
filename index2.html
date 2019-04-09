@@ -7,29 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <script src="main.js"></script>
+    <style>
+      div {
+        border: 2px solid #73a11a;
+        width: 150px;
+        height: 200px;
+        margin: 5px;
+        background: url(images2/main_slide_01.jpg) right bottom no-repeat;
+        float: left;
+      }
+      #box_rel {
+        background-size: 40% 70%;
+      }
+      #box_abs {
+        background-size: 50px 50px;
+      }
+      #box_cover {
+        background-size: cover;
+      }
+      #box_contain {
+        background-size: contain;
+      }
+    </style>
   </head>
   <body>
-    <!-- <div class="wrap">
-      <ul>
-        <li class="m1">MENU</li>
-        <li class="m2">MENU</li>
-        <li class="m3">MENU</li>
-        <li class="m4">MENU</li>
-      </ul>
-    </div> -->
-    <!-- <div id="borderBox">
-      <ul>
-        <li class="menu">MENU</li>
-        <li class="menu">MENU</li>
-        <li class="menu">MENU</li>
-        <li class="menu">MENU</li>
-      </ul>
-    </div>
-
-    <p>&nbsp;</p>
-    <img src="images2/main_slide_01.jpg" alt="" /> -->
-    <div id="text">
-      <p>Shadow Text</p>
-    </div>
+    <h2>배경 이미지 크기 조절</h2>
+    <div id="box_org">원본크기</div>
+    <div id="box_rel">비율사용</div>
+    <div id="box_abs">고정값사용</div>
+    <div id="box_cover">컨텐츠 크게이 맞게</div>
+    <div id="box_contain">컨텐츠 크기에 맞춰 비율 고정</div>
   </body>
 </html>
