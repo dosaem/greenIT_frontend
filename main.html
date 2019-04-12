@@ -67,6 +67,14 @@
     };
   };
 
+  const go = function(...args) {
+    let a = args[0];
+    for (let i = 1; i < args.length; i++) {
+      a = args[i](a);
+    }
+    return a;
+  };
+
   // const func = pipe(
   //   iter => map(square, iter),
   //   iter => filter(isOddNumber, iter),
@@ -80,5 +88,13 @@
     a => a + 1
   );
 
-  console.log(func(...iter));
+  const res = go(
+    products,
+    list => filter(propEq("category", "phone"), list),
+    list => map(prop("price"), list),
+    list => map(a => a * 0.8, list),
+    list => reduce(add, list)
+  );
+  // console.log(func(...iter));
+  console.log(res);
 </script>
