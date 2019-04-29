@@ -59,6 +59,7 @@
 
   const pipe = function(...fs) {
     return function(...acc) {
+      console.log(...acc);
       let a = fs[0](...acc);
       for (let i = 1; i < fs.length; i++) {
         a = fs[i](a);
@@ -75,18 +76,18 @@
     return a;
   };
 
-  // const func = pipe(
-  //   iter => map(square, iter),
-  //   iter => filter(isOddNumber, iter),
-  //   iter => reduce(add, iter)
-  // );
-  const addAll = (...args) => reduce(add, args);
   const func = pipe(
-    addAll,
-    square,
-    Math.sqrt,
-    a => a + 1
+    iter => map(square, iter),
+    iter => filter(isOddNumber, iter),
+    iter => reduce(add, iter)
   );
+  const addAll = (...args) => reduce(add, args);
+  // const func = pipe(
+  //   addAll,
+  //   square,
+  //   Math.sqrt,
+  //   a => a + 1
+  // );
 
   const res = go(
     products,
@@ -95,6 +96,6 @@
     list => map(a => a * 0.8, list),
     list => reduce(add, list)
   );
-  // console.log(func(...iter));
-  console.log(res);
+  console.log(func(iter));
+  // console.log(res);
 </script>

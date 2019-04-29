@@ -1,11 +1,40 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="js/main.js"></script>
-  </head>
-  <body></body>
-</html>
+<script>
+  // function getData() {
+  //   return new Promise(function(resolve, reject) {
+  //     $.get("url 주소/product/1", function(response) {
+  //       if (response) {
+  //         resolve(response);
+  //       }
+  //       reject(new Error("Request is failed"));
+  //     });
+  //   });
+  // }
+  // getData()
+  //   .then(function(data) {
+  //     console.log(data);
+  //   })
+  //   .catch(function(err) {
+  //     console.log(err);
+  //   });
+
+  var _promise = function(param) {
+    return new Promise(function(resolve, reject) {
+      window.setTimeout(function() {
+        if (param) {
+          resolve("해결");
+        } else {
+          reject("실패");
+        }
+      }, 3000);
+    });
+  };
+
+  _promise(true).then(
+    function(text) {
+      console.log(text);
+    },
+    function(error) {
+      console.error(error);
+    }
+  );
+</script>
